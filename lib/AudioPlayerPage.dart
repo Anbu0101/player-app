@@ -63,6 +63,9 @@ class _AudioPlayerPageState extends State<AudioPlayerPage> {
         await _audioPlayer!.setUrl(widget.audioFiles![_currentIndex]);
       }
       await _audioPlayer!.play();
+      setState(() {
+        isPlaying = true;
+      });
       print('Playing audio at index: $_currentIndex');
     } catch (e) {
       print('Error playing audio: $e');
